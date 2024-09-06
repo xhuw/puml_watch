@@ -1,0 +1,7 @@
+@startuml A
+A->B
+@enduml
+
+@startuml B
+C->D
+@enduml
