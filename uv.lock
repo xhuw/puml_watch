@@ -1,6 +1,12 @@
 version = 1
 requires-python = ">=3.12"
 
+[manifest]
+members = [
+    "puml-watch",
+    "puml-watch-plantuml",
+]
+
 [[package]]
 name = "anyio"
 version = "4.4.0"
@@ -28,6 +34,7 @@ name = "puml-watch"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
+    { name = "puml-watch-plantuml" },
     { name = "watchfiles" },
 ]
 
@@ -37,10 +44,18 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "watchfiles", specifier = ">=0.24.0" }]
+requires-dist = [
+    { name = "puml-watch-plantuml", editable = "packages/puml_watch_plantuml" },
+    { name = "watchfiles", specifier = ">=0.24.0" },
+]
 
 [package.metadata.requires-dev]
 dev = [{ name = "ruff", specifier = ">=0.6.4" }]
+
+[[package]]
+name = "puml-watch-plantuml"
+version = "0.1.0"
+source = { editable = "packages/puml_watch_plantuml" }
 
 [[package]]
 name = "ruff"

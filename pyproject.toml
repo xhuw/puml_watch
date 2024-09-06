@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "puml_watch_plantuml",
     "watchfiles>=0.24.0",
 ]
 
@@ -19,3 +20,9 @@ build-backend = "hatchling.build"
 dev-dependencies = [
     "ruff>=0.6.4",
 ]
+
+[tool.uv.sources]
+puml_watch_plantuml = {workspace = true}
+
+[tool.uv.workspace]
+members = ["packages/puml_watch_plantuml"]
